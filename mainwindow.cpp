@@ -29,10 +29,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QTimer* timer = new QTimer(this);
+    timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::addPoint);
 
-    timer->start(100); // interval in milliseconds
+    timer->start(20); // interval in milliseconds
 }
 
 void MainWindow::addPoint(){
@@ -41,7 +41,7 @@ void MainWindow::addPoint(){
     int y = 0;
     double r = 2;
 
-    robot.directionReader.addDirection(5);
+    robot.directionReader.addDirection(1);
 
     double newx = x+distance*cos(robot.getDirection());
     double newy = y+distance*sin(robot.getDirection());
@@ -80,5 +80,13 @@ void MainWindow::addPoint(){
 
     fade->start(QAbstractAnimation::DeleteWhenStopped);
     // scene->addEllipse(newx - r/2, newy - r/2, r, r);
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    if (timer->isActive()){
+        timer->stop();
+    }
 }
 
