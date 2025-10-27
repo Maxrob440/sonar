@@ -5,7 +5,7 @@
 DistanceReader::DistanceReader() {
 }
 
-double DistanceReader:: getDistance(){
+double DistanceReader:: getRandomDistance(){
 
     std::random_device dev;
     std::mt19937 rng(dev());
@@ -19,4 +19,10 @@ double DistanceReader:: getDistance(){
         return 100.0;
     }
 
+}
+
+double DistanceReader :: getDistance(){
+    double timeTaken = 10; //Standard distance before setting up Pi
+    double distance = timeTaken * speedOfSoundInAir;
+    return distance;
 }
