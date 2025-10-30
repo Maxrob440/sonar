@@ -4,6 +4,7 @@
 class DistanceReader
 {
 public:
+    double speedOfSoundInAir;
     double distance;
     DistanceReader();
     double getDistance();

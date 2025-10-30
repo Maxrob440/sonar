@@ -1,6 +1,6 @@
 #include "distancereader.h"
 #include <random>
-#include <qDebug>
+#include <QDebug>
 
 DistanceReader::DistanceReader() {
 }

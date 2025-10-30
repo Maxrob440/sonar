@@ -4,7 +4,7 @@
 Robot::Robot() {}
 
 double Robot::getDistance(){
-    return distanceReader.getDistance();
+    return distanceReader.getRandomDistance();
 }
 double Robot::getDirection(){
     // Returns in radians
