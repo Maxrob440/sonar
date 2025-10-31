@@ -21,7 +21,6 @@ set(PROJECT_SOURCES
         mainwindow.ui
         ${TS_FILES}
 )
-
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Sonar
         MANUAL_FINALIZATION
@@ -32,6 +31,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
 
     )
+
+target_link_libraries(Sonar PRIVATE  Qt6::Widgets lgpio)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Sonar APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)

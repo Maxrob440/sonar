@@ -2,15 +2,15 @@
 #define ROBOT_H
 #include "distancereader.h"
 #include "directionreader.h"
-
 class Robot
 {
 public:
-    DistanceReader distanceReader = DistanceReader();
-    DirectionReader directionReader = DirectionReader();
+  int h;
     Robot();
     double getDistance();
     double getDirection();
+    DistanceReader distanceReader;
+    DirectionReader directionReader;
 };
 
 #endif // ROBOT_H
