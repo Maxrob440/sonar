@@ -18,7 +18,8 @@ jobs:
           qt6-base-dev \
           qt6-base-dev-tools \
           qt6-tools-dev \
-          libxkbcommon-dev 
+          libxkbcommon-dev \
+          liblgpio-dev
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
