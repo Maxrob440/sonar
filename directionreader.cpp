@@ -33,7 +33,7 @@ int DirectionReader::angleToPulse(double angleDeg,
 void DirectionReader::setDirection(double angleDeg){
   // Code to move the servo
   // PIN is gpio 17 which is pin 11 on the pi
-  if (h==0){return void();} // allows for testing on PC without rpi
+  if (h<0){return void();} // allows for testing on PC without rpi
   lgTxServo(h,PIN,angleToPulse(angleDeg),FREQ,0,0);
 }
 
