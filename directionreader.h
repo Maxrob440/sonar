@@ -7,9 +7,9 @@ class DirectionReader
 public:
     int PIN = 17;
     int FREQ = 50;
-    double direction;
+    double direction = -90;
     int h;
-    double directionMove;
+    double directionMove = 1;
     DirectionReader(int h);
     double getDirection();
     double getRadiansDirection();

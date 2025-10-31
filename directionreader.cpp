@@ -3,6 +3,7 @@
 #include <random>
 #include <chrono>
 #include <thread>
+#include <iostream>
 DirectionReader::DirectionReader(int handle):h(handle) {
   lgGpioClaimOutput(h,0,PIN,0);
 }
@@ -33,8 +34,10 @@ void DirectionReader::moveDirection(double angleDeg){
   else if (direction < -89 and direction == -1){
     directionMove =1;
   }
-    direction+=angleDeg*directionMove;
+    direction=direction + angleDeg*directionMove;
     setDirection(direction);
+    std::cout<<angleDeg <<"angle\n";
+    std::cout<<direction<<"\n";
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }
 
