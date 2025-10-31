@@ -33,7 +33,7 @@ void DirectionReader::moveDirection(double angleDeg){
   else if (direction < -89 and direction == -1){
     directionMove =1;
   }
-    direction+=angleDeg;
+    direction+=angleDeg*directionMove;
     setDirection(direction);
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }
