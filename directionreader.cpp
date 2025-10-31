@@ -27,11 +27,12 @@ void DirectionReader::setDirection(double angleDeg){
 }
 void DirectionReader::moveDirection(double angleDeg){
   if (direction>89 && direction == 1 ){
-    direction = -1;
+    directionMove = -1;
   }
   else if (direction < -89 and direction == -1){
-    direction =1;
+    directionMove =1;
   }
     direction+=angleDeg;
+    setDirection(direction);
 }
 

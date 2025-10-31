@@ -9,6 +9,7 @@ public:
     int FREQ = 50;
     double direction;
     int h;
+    double directionMove;
     DirectionReader(int h);
     double getDirection();
     double getRadiansDirection();
