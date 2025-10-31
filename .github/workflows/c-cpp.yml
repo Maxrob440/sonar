@@ -14,7 +14,10 @@ jobs:
       - name: Install Qt
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt6-base-dev qt6-base-dev-tools
+          sudo apt-get install -y \
+          qt6-base-dev \
+          qt6-base-dev-tools \
+          libxkbcommon-dev 
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
