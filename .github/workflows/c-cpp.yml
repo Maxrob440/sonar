@@ -11,7 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      - name: Install Qt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gt6-base-dev qt6-base-dev-tools
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
