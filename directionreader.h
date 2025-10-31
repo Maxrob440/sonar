@@ -5,7 +5,7 @@
 class DirectionReader
 {
 public:
-    int PIN;
+    int PIN = 17;
     int FREQ = 50;
     double direction;
     int h;
