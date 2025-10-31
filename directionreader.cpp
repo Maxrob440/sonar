@@ -41,8 +41,8 @@ void DirectionReader::moveDirection(double angleDeg){
   // adjusts the current angle by the angleDeg
   if (direction>89 and directionMove==1){directionMove=-1;} // if moving up and angle is 90* move back down
   else if (direction <-89 and directionMove==-1){directionMove =1;} // if moving down and angle is -90 start moving up
-    direction=direction + angleDeg*directionMove;
+    direction=direction + angleDeg*directionMove; // direction move is either -1,1
     setDirection(direction);
-  std::this_thread::sleep_for(std::chrono::milliseconds(100));
+  std::this_thread::sleep_for(std::chrono::milliseconds(100)); // sleep to avoid over doing it
 }
 

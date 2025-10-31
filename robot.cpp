@@ -5,16 +5,14 @@
 #include <iostream>
 Robot::Robot() 
   :h(lgGpiochipOpen(0)),
-  // sonarDistanceReader(h),
   directionReader(h)
 {
-  std::cout<<h;
   if (h<0){
-    std::cout<<"random chosen\n";
+    // Randomised for testing on computer
     distanceReader = std::make_unique<RandomDistanceReader>(10,200);
   }
   else{
-    std::cout<<"not random\n";
+    // real sensor conection
     distanceReader = std::make_unique<SonarDistanceReader>(h);
   }
 }

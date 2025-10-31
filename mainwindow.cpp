@@ -29,6 +29,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    // start button
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::addPoint);
 
@@ -85,6 +86,7 @@ void MainWindow::addPoint(){
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    // stop button
     if (timer->isActive()){
         timer->stop();
     }
