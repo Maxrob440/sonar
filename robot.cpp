@@ -4,7 +4,7 @@
 Robot::Robot() 
   :h(lgGpiochipOpen(0)),
   distanceReader(h),
-  directionReader()
+  directionReader(h)
 {}
 
 double Robot::getDistance(){
