@@ -1,7 +1,8 @@
 #include "directionreader.h"
 #include <cmath>
 #include <random>
-
+#include <chrono>
+#include <thread>
 DirectionReader::DirectionReader(int handle):h(handle) {
   lgGpioClaimOutput(h,0,PIN,0);
 }
