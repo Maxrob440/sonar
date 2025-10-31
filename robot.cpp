@@ -9,7 +9,7 @@ Robot::Robot()
   directionReader(h)
 {
   std::cout<<h;
-  if (h!=1){
+  if (h<0){
     std::cout<<"random chosen\n";
     distanceReader = std::make_unique<RandomDistanceReader>(10,200);
   }
