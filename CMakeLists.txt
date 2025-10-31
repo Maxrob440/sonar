@@ -25,9 +25,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Sonar
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        distancereader.h distancereader.cpp
+        sonardistancereader.h sonardistancereader.cpp
         robot.h robot.cpp
         directionreader.h directionreader.cpp
+        randomdistancereader.h randomdistancereader.cpp
+        distancereader.h distancereader.cpp
 
 
     )

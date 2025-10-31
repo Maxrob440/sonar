@@ -41,7 +41,7 @@ void MainWindow::addPoint(){
     int y = 0;
     double r = 2;
 
-    robot.directionReader.moveDirection(10);
+    robot.directionReader.moveDirection(5);
 
     double newx = x+distance*cos(robot.getDirection());
     double newy = y+distance*sin(robot.getDirection());

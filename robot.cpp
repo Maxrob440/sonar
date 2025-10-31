@@ -1,14 +1,27 @@
 #include "robot.h"
-#include "distancereader.h"
+#include "sonardistancereader.h"
+#include "randomdistancereader.h"
 #include <lgpio.h>
+#include <iostream>
 Robot::Robot() 
   :h(lgGpiochipOpen(0)),
-  distanceReader(h),
+  // sonarDistanceReader(h),
   directionReader(h)
-{}
+{
+  std::cout<<h;
+  if (h!=1){
+    std::cout<<"random chosen\n";
+    distanceReader = std::make_unique<RandomDistanceReader>(10,200);
+  }
+  else{
+    std::cout<<"not random\n";
+    distanceReader = std::make_unique<SonarDistanceReader>(h);
+  }
+}
 
 double Robot::getDistance(){
-    return distanceReader.getDistance();
+  // returns in cm
+    return distanceReader->getDistance();
 }
 double Robot::getDirection(){
     // Returns in radians

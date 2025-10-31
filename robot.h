@@ -1,5 +1,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
+#include <memory>
 #include "distancereader.h"
 #include "directionreader.h"
 class Robot
@@ -9,7 +10,7 @@ public:
     Robot();
     double getDistance();
     double getDirection();
-    DistanceReader distanceReader;
+  std::unique_ptr<DistanceReader> distanceReader;
     DirectionReader directionReader;
 };
 
