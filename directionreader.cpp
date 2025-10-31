@@ -28,10 +28,10 @@ void DirectionReader::setDirection(double angleDeg){
   lgTxServo(h,PIN,angleToPulse(angleDeg),FREQ,0,0);
 }
 void DirectionReader::moveDirection(double angleDeg){
-  if (direction>89 && direction == 1 ){
+  if (direction>89 and directionMove == 1 ){
     directionMove = -1;
   }
-  else if (direction < -89 and direction == -1){
+  else if (direction < -89 and directionMove == -1){
     directionMove =1;
   }
     direction=direction + angleDeg*directionMove;
