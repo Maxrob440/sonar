@@ -5,9 +5,20 @@
 #include <thread>
 #include <iostream>
 
+#ifndef UNIT_TESTING
+  #include <lgpio.h>
+#else 
+  static inline int lgGpioClaimOutput(int,int,int,int){return 0;}
+  static inline int lgTxServo(int,int,int,double,int,int){return 0;}
+#endif
 
 DirectionReader::DirectionReader(int handle):h(handle) {
-  lgGpioClaimOutput(h,0,PIN,0);
+  #ifndef UNIT_TESTING
+    lgGpioClaimOutput(h,0,PIN,0);
+  #else 
+  (void)h;
+#endif
+    
 }
 
 double DirectionReader::getDirection(){
@@ -43,6 +54,8 @@ void DirectionReader::moveDirection(double angleDeg){
   else if (direction <-89 and directionMove==-1){directionMove =1;} // if moving down and angle is -90 start moving up
     direction=direction + angleDeg*directionMove; // direction move is either -1,1
     setDirection(direction);
+  #ifndef UNIT_TESTING // stops sleeping in tests
   std::this_thread::sleep_for(std::chrono::milliseconds(100)); // sleep to avoid over doing it
+  #endif
 }
 

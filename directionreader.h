@@ -1,6 +1,5 @@
 #ifndef DIRECTIONREADER_H
 #define DIRECTIONREADER_H
-#include <lgpio.h>
 
 class DirectionReader
 {

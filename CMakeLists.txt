@@ -11,7 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
-
+include(CTest)
+if(BUILD_TESTING)
+  add_subdirectory(tests)
+endif()
 set(TS_FILES Sonar_en_GB.ts)
 
 set(PROJECT_SOURCES
