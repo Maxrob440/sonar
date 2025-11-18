@@ -19,5 +19,3 @@ It’s designed to run on a Raspberry Pi with the HC-SR04 distance sensor and SG
 3. cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 4. cmake --build build --parallel
 5. ./build/Sonar
-
-By Max Robertson
